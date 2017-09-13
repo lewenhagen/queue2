@@ -1,0 +1,70 @@
+/*@font-face {
+    font-family: "dtm-sans";
+    src: url("font/DTM-Sans.otf") format("opentype");
+}*/
+
+body {
+    background-color: #DCE6F2;
+    font-family: Rockwell, serif;
+    overflow-x: hidden;
+}
+
+.jumbotron {
+    background-color: #DCE6F2;
+    text-align: center;
+}
+#counter {
+    margin-left: -25px;
+    margin-top: 10px;
+}
+
+#counter ul {
+    list-style-type: none;
+}
+
+.nextStudent {
+    text-align: center;
+}
+.nextbtn {
+    background-color: #92D050;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.prevbtn {
+    background-color: #C00000;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.btn-lg {
+    font-size: 34px;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+   background-color: #A6B6CB;
+}
+
+.queueForm {
+    margin-top: 10%;
+}
+
+.startQueueBtn {
+    margin-top: 20px;
+}
+
+footer {
+    /*font-family: "dtm-sans";*/
+    margin-top: 50px;
+}
+
+th {
+    /*text-align: center;*/
+}
+
+.centerText {
+    text-align: center;
+}
