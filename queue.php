@@ -1,9 +1,22 @@
 <?php
     $title = "Queue";
     include("includes/header.php");
-    include("includes/functions.php");
+    // include("includes/functions.php");
 ?>
-
+<script>
+    var previous = null;
+    var current = null;
+    setInterval(function() {
+        $.getJSON("db/students_in_queue.json", function(json) {
+            current = JSON.stringify(json);
+            if (previous && current && previous !== current) {
+                console.log('refresh');
+                location.reload();
+            }
+            previous = current;
+        });
+    }, 2000);
+</script>
 <div class="container">
     <div class="row">
         <img src="img/lessonqueue.svg" style="width: 100%">
@@ -22,6 +35,7 @@
                 </tr>
             </thead>
             <tbody id="queueBody">
+                <?= printQueue(); ?>
                 <script>
                     // updateTable();
                 </script>
