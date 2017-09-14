@@ -4,24 +4,26 @@
     // include("includes/functions.php");
 ?>
 <script>
-    var previous = null;
-    var current = null;
+    // var previous = null;
+    // var current = null;
     setInterval(function() {
-        $.getJSON("db/students_in_queue.json", function(json) {
-            current = JSON.stringify(json);
-            if (previous && current && previous !== current) {
-                console.log('refresh');
-                location.reload();
-            }
-            previous = current;
-        });
+        // $.getJSON("db/students_in_queue.json", function(json) {
+        //     current = JSON.stringify(json);
+        //     if (previous && current && previous !== current) {
+        //         console.log('refresh');
+        //         location.reload();
+        //     }
+        //     previous = current;
+        //     // location.reload();
+        // });
+        location.reload();
     }, 2000);
 </script>
 <div class="container">
     <div class="row">
         <img src="img/lessonqueue.svg" style="width: 100%">
         <div class="jumbotron">
-            <!-- <h2>Nu hjälper jag: <br><span id="currentStudent"><script>getCurrentStudent();</script></span></h2> -->
+            <h2><?= nowHelping(); ?></h2>
         </div>
     </div>
     <div class="row">

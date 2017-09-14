@@ -1,6 +1,19 @@
 <?php
     $title = "Admin";
     include("includes/header.php");
+
+    $action = isset($_GET["action"]) ? htmlentities($_GET["action"]) : null;
+
+    if ($action != null) {
+        if ($action == "clearHelped") {
+            clear("helped");
+        } elseif ($action == "clearQueue") {
+            clear("queue");
+        } elseif ($action == "clearAll") {
+            clear("all");
+        }
+        header("Location: admin.php");
+    }
 ?>
 
 <div class="container">
@@ -17,16 +30,29 @@
     </div>
     <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <form action="includes/admin-process.php" method="POST">
-                <!-- <input type="hidden" name="admin-button-next" value="1"> -->
                 <button type="submit" name="admin-button" value="next" class="btn nextbtn btn-lg btn-block nextbtn">Nästa</button>
             </form>
             <form action="includes/admin-process.php" method="POST">
-                <!-- <input type="hidden" name="admin-button-prev" value="1"> -->
                 <button type="submit" name="admin-button" value="prev" class="btn nextbtn btn-lg btn-block prevbtn">Föregående</button>
             </form>
-        <div class="col-md-2"></div>
+        </div>
+        <div class="col-md-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-xs-1">#</th>
+                        <th class="col-xs-3">Namn</th>
+                        <th class="col-xs-2 col-centered">Uppgift</th>
+                        <th class="col-xs-2">Tid</th>
+                    </tr>
+                </thead>
+                <tbody id="queueBody">
+                    <?= printHelpedQueue(); ?>
+              </tbody>
+            </table>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-4"></div>
