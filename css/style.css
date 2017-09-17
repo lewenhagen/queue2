@@ -68,3 +68,7 @@ th {
 .centerText {
     text-align: center;
 }
+
+.clearLinks {
+    list-style-type: none;
+}

@@ -29,7 +29,13 @@
 
     </div>
     <div class="row">
-        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <ul class="clearLinks"><h4>Clear data-files</h4>
+                <li><a href="admin.php?action=clearHelped">Clear helped</a></li>
+                <li><a href="admin.php?action=clearQueue">Clear queued</a></li>
+                <li><a href="admin.php?action=clearAll">Clear all</a></li>
+            </ul>
+            </div>
         <div class="col-md-6">
             <form action="includes/admin-process.php" method="POST">
                 <button type="submit" name="admin-button" value="next" class="btn nextbtn btn-lg btn-block nextbtn">Nästa</button>
@@ -40,7 +46,7 @@
         </div>
         <div class="col-md-4">
             <table class="table table-striped">
-                <thead>
+                <thead><legend>Helped students</legend>
                     <tr>
                         <th class="col-xs-1">#</th>
                         <th class="col-xs-3">Namn</th>
@@ -55,8 +61,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-6"><h3><span id="queueStarted"></span></h3></div>
+        <div class="col-md-4">
+
+
+        </div>
+        <div class="col-md-6"></div>
         <div class="col-md-2"></div>
     </div>
 </div>
